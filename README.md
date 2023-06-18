@@ -28,6 +28,7 @@ or use a GitHub Client.
 2. Create the database schema using the following SQL statements:
 
 -- Schema for the "user" table
+
 CREATE TABLE user (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
@@ -37,6 +38,7 @@ CREATE TABLE user (
 );
 
 -- Schema for the "appointment" table
+
 CREATE TABLE appointment (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
