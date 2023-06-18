@@ -1,4 +1,4 @@
-# Washapp-Final
+# Washapp
 
 Washapp is a web application that allows users to manage appointments. It provides functionalities to consult user appointments and book new appointments.
 
