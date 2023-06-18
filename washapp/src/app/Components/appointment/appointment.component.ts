@@ -11,12 +11,14 @@ export class AppointmentComponent {
   dateTime: { date: string, time: string };
   appointments: any[];
 
+  //initialize properties
   constructor(private appointmentService: AppointmentService) {
     this.customerId = 1;
     this.dateTime = { date: '', time: '' };
     this.appointments = [];
   }
 
+  //method to book appointments using API endpoints from the service that calls them
   bookAppointment(): void {
     this.appointmentService.bookAppointment(this.customerId, this.dateTime).subscribe(
       () => {
@@ -29,6 +31,7 @@ export class AppointmentComponent {
     );
   }
 
+  //method to retrieve appointments using API endpoints from the service that calls them
   getAppointments(): void {
     this.appointmentService.getUserAppointments(this.customerId).subscribe(
       (appointments) => {

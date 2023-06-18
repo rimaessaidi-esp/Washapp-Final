@@ -2,16 +2,18 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 app.use(cors());
-const { sequelize, testConnection } = require('./database');
+const { testConnection } = require('./database');
 const { Appointment } = require('./models/appointment');
-const { User } = require('./models/user');
 
+//for json parsing
 app.use(express.json());
 
+//to go to the server path
 app.get('/', (req, res) => {
   res.send('Hello from the Node.js server!');
 });
 
+//to connect to the server via port 3000 including connectivity testing
 const port = 3000;
 app.listen(port, async () => {
   try {
@@ -28,7 +30,7 @@ app.post('/book-appointment', async (req, res) => {
   const { customerId, dateTime } = req.body;
 
   try {
-    // Create a new appointment in the appointments table
+    // Creation of a new appointment in the appointments table
     const appointment = await Appointment.create({
       user_id: customerId,
       appointment_date: dateTime.date,
@@ -47,7 +49,7 @@ app.get('/user-appointments/:customerId', async (req, res) => {
   const { customerId } = req.params;
 
   try {
-    // Fetch appointments for the specified customer from the appointments table
+    // Fetching appointments for the specified customer from the appointments table
     const appointments = await Appointment.findAll({
       where: {
         user_id: customerId,
