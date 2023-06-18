@@ -20,14 +20,35 @@ To run this project, you'll need the following:
 
 ## Installation
 
-1. Clone the project repository to your local machine:
+1. Clone the project repository to your local machine (exp: htdocs for XAMPP):
 git clone https://github.com/your-username/Washapp.git
 
 or use a GitHub Client.
 
-2. Navigate to the project's root directory.
+2. Create the database schema using the following SQL statements:
+-- Schema for the "user" table
+CREATE TABLE user (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-3. Install the project dependencies using the following command:
+-- Schema for the "appointment" table
+CREATE TABLE appointment (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  appointment_date DATE NOT NULL,
+  appointment_time TIME NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+3. Navigate to the project's root directory.
+
+4. Install the project dependencies using the following command:
 npm install
 
 ## Running the Project
