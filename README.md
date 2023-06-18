@@ -52,18 +52,18 @@ CREATE TABLE appointment (
 3. Navigate to the project's root directory.
 
 4. Install the project dependencies using the following command:
-npm install
+`npm install`
 
 ## Running the Project
 
 1. Make sure your MySQL database server is running.
 
 2. Start the Angular server by running the following command:
-ng serve
+`ng serve`
 
 The Angular server will be accessible at `http://localhost:4200`.
 
 3. Start the Node.js server by running the following command:
-node server.js
+`node server.js`
 
 The Node.js server will be accessible at `http://localhost:3000`.
