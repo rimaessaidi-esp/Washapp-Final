@@ -67,3 +67,31 @@ The Angular server will be accessible at `http://localhost:4200`.
 `node server.js`
 
 The Node.js server will be accessible at `http://localhost:3000`.
+
+4. Open your web browser and navigate to http://localhost:4200 to access the Washapp application.
+
+## Testing
+
+You can test the functionality of the Washapp API using the following endpoints:
+
+List user appointments: 
+
+GET http://localhost:3000/user-appointments/:customerId
+
+Example:
+
+GET http://localhost:3000/user-appointments/1
+
+Book an appointment: 
+
+POST http://localhost:3000/book-appointment
+
+Example Body (JSON):
+
+{
+  "customerId": 1,
+  "dateTime": {
+    "date": "2023-06-20",
+    "time": "10:00:00"
+  }
+}
