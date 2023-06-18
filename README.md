@@ -21,7 +21,7 @@ To run this project, you'll need the following:
 ## Installation
 
 1. Clone the project repository to your local machine (exp: htdocs for XAMPP):
-git clone https://github.com/your-username/Washapp.git
+git clone https://github.com/rimaessaidi-esp/Washapp-Final.git
 
 or use a GitHub Client.
 
