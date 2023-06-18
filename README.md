@@ -26,6 +26,7 @@ git clone https://github.com/your-username/Washapp.git
 or use a GitHub Client.
 
 2. Create the database schema using the following SQL statements:
+
 -- Schema for the "user" table
 CREATE TABLE user (
   id INT AUTO_INCREMENT PRIMARY KEY,
